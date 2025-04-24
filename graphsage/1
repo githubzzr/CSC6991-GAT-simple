@@ -1,0 +1,1 @@
+python -m graphsage.main --dataset pubmed --gat

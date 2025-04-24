@@ -1,3 +1,5 @@
+
+
 import torch
 import torch.nn as nn
 from torch.nn import init
@@ -48,3 +50,6 @@ class Encoder(nn.Module):
             combined = neigh_feats
         combined = F.relu(self.weight.mm(combined.t()))
         return combined
+
+
+

@@ -61,3 +61,7 @@ class MeanAggregator(nn.Module):
             embed_matrix = self.features(torch.LongTensor(unique_nodes_list))
         to_feats = mask.mm(embed_matrix)
         return to_feats
+# file: graphsage/aggregators.py
+
+
+

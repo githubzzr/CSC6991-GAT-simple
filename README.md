@@ -1,19 +1,31 @@
-# Reference PyTorch GraphSAGE Implementation
-### Author: William L. Hamilton
+# CSC6991-GAT-simple
+### Author: Zerun Zhang
 
+This project is a fork of [graphsage-simple](https://github.com/williamleif/graphsage-simple), with  modifications to support Graph Attention Network (GAT) models in addition to the original GraphSAGE implementation.
 
-Basic reference PyTorch implementation of [GraphSAGE](https://github.com/williamleif/GraphSAGE).
-This reference implementation is not as fast as the TensorFlow version for large graphs, but the code is easier to read and it performs better (in terms of speed) on small-graph benchmarks.
-The code is also intended to be simpler, more extensible, and easier to work with than the TensorFlow version.
+- Added GAT model implementation with both single-head and multi-head attention mechanisms.
+- Enabled support for both **Cora** and **Pubmed** datasets.
+- Added command-line arguments to toggle between GraphSAGE and GAT models.
+- CUDA usage can be enabled by manually modifying the relevant variable in `model.py`.
 
-Currently, only supervised versions of GraphSAGE-mean and GraphSAGE-GCN are implemented. 
+## Environment Requirements
 
-#### Requirements
-
-pytorch >0.2 is required.
+- Python: `3.8.20`
+- NumPy: `1.24.4`
+- PyTorch: `2.2.1`
+- scikit-learn: `1.3.2`
 
 #### Running examples
 
-Execute `python -m graphsage.model` to run the Cora example.
-It assumes that CUDA is not being used, but modifying the run functions in `model.py` in the obvious way can change this.
-There is also a pubmed example (called via the `run_pubmed` function in model.py).
+Run GraphSAGE on Cora
+
+Execute `python -m graphsage.model --dataset cora `
+
+Run Single-Head GAT on Cora
+
+Execute `python -m graphsage.model  --dataset cora   --gat` 
+
+
+Run Multi-Head GAT on Pubmed
+
+Execute `  python -m graphsage.model  --dataset pubmed --gat ` 
